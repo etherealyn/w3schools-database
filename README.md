@@ -10,7 +10,7 @@ In Spark, you can read any table just by using the following code:
 
 ```scala
 
-val repoRoot = "/path/to/cloned/dir"
+val repoRoot = "/home/etherealyn/source/repos/w3schools-database/parquet" // change to your own path
 
 val customers = spark.read.parquet(s"file://$repoRoot/customers")
 val categories = spark.read.parquet(s"file://$repoRoot/categories")
