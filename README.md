@@ -2,7 +2,26 @@
 
 This repository is a fork of [AndrejPHP](https://github.com/AndrejPHP)'s [w3schools-database](https://github.com/AndrejPHP/w3schools-database)
 
-I used the Apache Spark engine to read and translate SQL files to Parquet, because sometimes to test a feature in Spark, one needs to quickly access a database with a meaningful schema especially if you're coming from relational background.
+I used the [Apache Spark](https://github.com/apache/spark) engine to read and translate the original SQL file to [Parquet](https://github.com/apache/parquet-mr).
+
+Motivation: sometimes to test a feature in Spark, one needs to quickly access a database with a meaningful schema especially if you're coming from relational background. Feel free to use it.
+
+In Spark, you can read any table just by using the following code:
+
+```scala
+
+val repoRoot = "/path/to/cloned/dir"
+
+val customers = spark.read.parquet(s"file://$repoRoot/customers")
+val categories = spark.read.parquet(s"file://$repoRoot/categories")
+val employees = spark.read.parquet(s"file://$repoRoot/employees")
+val orders = spark.read.parquet(s"file://$repoRoot/orders")
+val orderDetails = spark.read.parquet(s"file://$repoRoot/order_details")
+val products = spark.read.parquet(s"file://$repoRoot/products")
+val shippers = spark.read.parquet(s"file://$repoRoot/shippers")
+val suppliers = spark.read.parquet(s"file://$repoRoot/suppliers")
+
+```
 
 > I'm not associated with W3Schools but I have to give them a big shout-out. This is their website:
 > https://www.w3schools.com
