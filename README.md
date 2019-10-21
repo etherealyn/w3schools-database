@@ -6,7 +6,7 @@ I used the [Apache Spark](https://github.com/apache/spark) engine to read and tr
 
 Motivation: sometimes to test a feature in Spark, one needs to quickly access a database with a meaningful schema especially if you're coming from relational background. Feel free to use it.
 
-In Spark, you can read any table just by using the following code:
+In Spark, you can read the tables as DataFrames like this:
 
 ```scala
 
